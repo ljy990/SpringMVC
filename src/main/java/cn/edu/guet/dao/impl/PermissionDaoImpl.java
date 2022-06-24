@@ -13,7 +13,7 @@ import java.util.List;
  * @author jinyu
  * @date 2022/6/9 21:15
  */
-public class IPermissionDaoImpl implements IPermissionDao {
+public class PermissionDaoImpl implements IPermissionDao {
     @Override
     public List<Permission> getPermission() {
         Connection conn = null;
@@ -32,9 +32,9 @@ public class IPermissionDaoImpl implements IPermissionDao {
             // rs.next：游标向下移动
             while(rs.next()){
                 Permission permission=new Permission();
-                permission.setId(rs.getString("id"));
+                permission.setId(rs.getString("permission_id"));
                 permission.setpId(rs.getString("pid"));
-                permission.setName(rs.getString("name"));
+                permission.setName(rs.getString("permission_name"));
                 permission.setUrl(rs.getString("url"));
                 permission.setIcon(rs.getString("icon"));
                 permission.setTarget(rs.getString("target"));

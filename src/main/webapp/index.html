@@ -67,21 +67,22 @@
               $.each(arr,function (i,secondPer){
                 if(secondPer.pId==permission.id){
                   // 添加二级菜单
-                  var $secondLI=$("<li class='secondmenu'><a href='#' target='content'>"+secondPer.name+"</a></li>");
+                  var $secondLI=$("<li class='secondmenu'><a href='"+secondPer.url+"' target='content'>"+secondPer.name+"</a></li>");
                   $secondUL.append($secondLI);
                   $li.append($secondUL);
                 }
-                $(".secondmenu>a").click(function(){
+                /*$(".secondmenu>a").click(function(){
                   $(".table").css("display","block");
                     console.log("sssssssssssssss")
-                })
-                var $tr=$("<tr>" +
+                })*/
+                /*var $tr=$("<tr>" +
                         "<td>"+permission.id+"</td>" +
                         "<td>"+permission.name+"</td>" +
                         "</tr>");
                 //.append($("<td>").append(permission.id))
                 //.append($("<td>").append(permission.name))
                 $(".table").append($tr);
+                */
               })
 
               $(".menu").append($li);
@@ -200,13 +201,8 @@
         </ul>
       </div>
       <div id="content">
-<!--        <iframe src="" frameborder="0" width="100%" height="100%" name="content"></iframe>-->
-        <table  border="1" class="table" style="display: none">
-          <tr>
-            <th>权限id</th>
-            <th>权限名称</th>
-          </tr>
-        </table>
+        <iframe src="" frameborder="0" width="100%" height="100%" name="content"></iframe>
+
       </div>
     </div>
   </div>
