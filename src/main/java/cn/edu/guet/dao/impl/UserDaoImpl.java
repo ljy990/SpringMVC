@@ -16,7 +16,7 @@ public class UserDaoImpl implements IUserDao {
         String user = "root";// mysql的用户名
         String pwd = "123456";
         String url = "jdbc:mysql://localhost:3306/teashop?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-        String sql = "SELECT id,nick_name,password,salt FROM sys_user WHERE name=?";
+        String sql = "SELECT userid,nick_name,password,salt FROM users WHERE username=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
@@ -34,7 +34,7 @@ public class UserDaoImpl implements IUserDao {
                 boolean result = encoderMd5.matches(encPass, password);
                 if (result) { //密码正确，返回User对象
                     User loginUser=new User();
-                    loginUser.setId(rs.getString("id"));
+                    loginUser.setId(rs.getString("userid"));
                     loginUser.setNickName(rs.getString("nick_name"));
                     return loginUser;
                 } else {
@@ -64,7 +64,7 @@ public class UserDaoImpl implements IUserDao {
         String sql = "SELECT p.*\n" +
                 "FROM user_role ur,role_permission rp,permission p\n" +
                 "WHERE ur.role_id=rp.role_id\n" +
-                "AND rp.permission_id=p.id\n" +
+                "AND rp.permission_id=p.permission_id\n" +
                 "AND user_id=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -78,9 +78,9 @@ public class UserDaoImpl implements IUserDao {
             // rs.next：游标向下移动
             while(rs.next()){
                 Permission permission=new Permission();
-                permission.setId(rs.getString("id"));
+                permission.setId(rs.getString("permission_id"));
                 permission.setpId(rs.getString("pid"));
-                permission.setName(rs.getString("name"));
+                permission.setName(rs.getString("permission_name"));
                 permission.setUrl(rs.getString("url"));
                 permission.setIcon(rs.getString("icon"));
                 permission.setTarget(rs.getString("target"));
