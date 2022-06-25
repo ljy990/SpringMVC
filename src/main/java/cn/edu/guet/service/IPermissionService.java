@@ -10,4 +10,7 @@ import java.util.List;
  */
 public interface IPermissionService {
     List<Permission> getPermission();
+    List<Permission> seekPermission(String seekName);
+    int deletePermission(String id);
+
 }

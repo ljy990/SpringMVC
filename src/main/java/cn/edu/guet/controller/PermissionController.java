@@ -19,4 +19,17 @@ public class PermissionController {
         IPermissionService permissionService=new PermissionServiceImpl();
         return permissionService.getPermission();
     }
+
+    @RequestMapping("/seekPermission")
+    public List<Permission> seekPermission(String seekName){
+        IPermissionService permissionService=new PermissionServiceImpl();
+        return permissionService.seekPermission(seekName);
+    }
+
+    @RequestMapping("/deletePermission")
+    public int deletePermission(String id){
+
+        return 0;
+    }
 }
+

@@ -18,4 +18,16 @@ public class PermissionServiceImpl implements IPermissionService {
         IPermissionDao permissionDao=new PermissionDaoImpl();
         return permissionDao.getPermission();
     }
+
+    @Override
+    public List<Permission> seekPermission(String name){
+        IPermissionDao permissionDao=new PermissionDaoImpl();
+        return permissionDao.seekPermission(name);
+    }
+
+    @Override
+    public int deletePermission(String id) {
+        return 0;
+    }
+
 }
