@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface IPermissionDao {
     List<Permission> getPermission();
+    List<Permission> seekPermission(String seekName);
+    int deletePermission(String id);
 }

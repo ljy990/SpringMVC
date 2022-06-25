@@ -12,13 +12,70 @@
     th,td{
       border: 1px solid black;
     }
+
+    #bg,#loading {
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 22;
+
+    }
+
+    /*遮罩图片居中显示*/
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .newUser {
+        width: 600px;
+        height: 600px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
   </style>
 </head>
 <body>
     <!--权限列表
     使用ajax给后台发送请求-->
     <script>
-      $.ajax({
+        function showdiv() {
+            document.getElementById("bg").style.display = "block";
+        }
+        function showLoading(){
+            document.getElementById("loading").style.display = "block";
+        }
+
+        function hidediv() {
+            document.getElementById("bg").style.display = 'none';
+        }
+        //查询
+        function seekPermission(){
+            var seekName=$("#seekname").val();
+            console.log(seekName);
+            $.ajax({
+                type: "GET",
+                url: "seekPermission.do",
+                data:{"seekName":seekName},
+                dataType: "json",
+                success: function (data) {
+                    console.log('查询返回的数据：',data)
+
+                }
+            });
+        }
+
+
+        $.ajax({
         type: "GET",
         url: "permissionList.do",
         dataType: "json",
@@ -30,18 +87,18 @@
                     "<td>"+menu.name+"</td>" +
                     "<td>"+menu.url+"</td>" +
                     "<td>"+menu.icon+"</td>" +
-                    "<td><a href='#'>修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='#'>新增</a></td>" +
+                    "<td><a href='#'>修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='#'>删除</a></td>" +
                     "</tr>");
             $("#tb").append($tr);
           })
-            $(".butt").click(function (){//查询点击事件
-                console.log("查询");
 
-            })
+            /*$(".butt2").click(function (){//新增点击事件
+                $("#bg").css("display","block");
+            })*/
         }
       });
     </script>
-    <input type="text"><button class="butt">查询</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="butt">新增</button>
+    <input type="text" id="seekname"><button class="butt1" onclick="showLoading();seekPermission()" >查询</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="butt2" onclick="showdiv()">新增</button>
     <table id="tb">
         <caption>权限数据</caption><!--标题-->
         <tr>
@@ -52,6 +109,20 @@
             <th>操作</th>
         </tr>
     </table>
-
+    <div id="loading">
+        <img class="loading" src="./o_loading.gif">
+    </div>
+    <div id="bg">
+        <div class="newUser">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <button>保存</button>
+            <button>取消</button>
+            <input id="btnclose" type="button" value="关闭" onclick="hidediv()"/>
+        </div>
+    </div>
 </body>
 </html>

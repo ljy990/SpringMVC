@@ -101,4 +101,5 @@ public class UserDaoImpl implements IUserDao {
         }
         return permissionList;//返回集合（把装满芒果的麻袋，扛到车上）
     }
+
 }
