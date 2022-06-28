@@ -11,11 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77272ff9-72ae-472a-8b39-1585fecd1d9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/IPermissionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/IPermissionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/IPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/IPermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/impl/PermissionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/permission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +239,7 @@
       <workItem from="1656139862344" duration="2734000" />
       <workItem from="1656159824625" duration="54000" />
       <workItem from="1656297110758" duration="17302000" />
-      <workItem from="1656380953727" duration="20399000" />
+      <workItem from="1656380953727" duration="21049000" />
     </task>
     <task id="LOCAL-00001" summary="完成了权限列表">
       <created>1656039383841</created>
@@ -260,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656139947686</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成了增删查改">
+      <created>1656413098261</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656413098261</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成了权限列表" />
     <MESSAGE value="完成了部分查询操作，可以拿到查询的数据，但没显示在td" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了部分查询操作，可以拿到查询的数据，但没显示在td" />
+    <MESSAGE value="完成了增删查改" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了增删查改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
