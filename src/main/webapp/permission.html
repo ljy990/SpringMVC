@@ -13,7 +13,7 @@
       border: 1px solid black;
     }
 
-    #bg,#loading {
+    #bg,#loading,#modify{
         display: none;
         position: absolute;
         top: 0%;
@@ -42,6 +42,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .newUser input{
+        margin-top: 25px;
+
+    }
+    .newPermission {
+        width: 600px;
+        height: 600px;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
   </style>
 </head>
 <body>
@@ -58,7 +72,14 @@
         function hidediv() {
             document.getElementById("bg").style.display = 'none';
         }
-        //查询
+        function hidediv() {
+            document.getElementById("bg").style.display = 'none';
+        }
+
+
+        /*
+        查询处理
+        */
         function seekPermission(){
             var seekName=$("#seekname").val();
             console.log(seekName);
@@ -67,9 +88,98 @@
                 url: "seekPermission.do",
                 data:{"seekName":seekName},
                 dataType: "json",
-                success: function (data) {
-                    console.log('查询返回的数据：',data)
+                success: function (response) {
+                    console.log('查询返回的数据：',response)
+                    document.getElementById("loading").remove();//取消遮罩层
+                    $("tr").remove();
+                    $.each(response,function (index,menu){
+                        var $tr=$("<tr>" +
+                            "<td><input type='checkbox' name='checkbox' value=''></td>" +
+                            "<td>"+menu.name+"</td>" +
+                            "<td>"+menu.url+"</td>" +
+                            "<td>"+menu.icon+"</td>" +
+                            "<td><input type='button' value='修改'>&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' value='删除' id='delete' onclick='deletePermission()'></td>" +
+                            "</tr>");
+                        $("#tb").append($tr);
+                    })
+                }
+            });
+        }
 
+        /*
+        删除操作
+         */
+        function deletePermission(permissionId){
+            console.log("传参..................")
+            // console.log(permissionId);
+            var flag=confirm("你确定要删除吗？");
+            if(flag==1){
+                $.ajax({
+                    type: "GET",
+                    url: "deletePermission.do",
+                    data:{"id":permissionId},
+                    dataType: "json",
+                    success: function (response) {
+                        if(response==1){
+                            alert("删除成功！");
+                        }else {
+                            alert("删除失败！")
+                        }
+                        window.location.reload();
+                    }
+                });
+            }else {
+                alert("删除失败！")
+            }
+        }
+
+        /**
+         * 新增操作
+         */
+        function insertPermission(){
+            //从输入框拿到输入的值，用ajax发送请求
+            var permissionId=document.getElementById("permission_id").value;
+            var permissionName=document.getElementById("permission_name").value;
+            var permissionUrl=document.getElementById("permission_url").value;
+            var permissionIcon=document.getElementById("permission_icon").value;
+            $.ajax({
+                type: "POST",
+                url: "insertPermission.do",
+                data:{"id":permissionId,"name":permissionName,"newurl":permissionUrl,"icon":permissionIcon},
+                dataType: "json",
+                success: function (response) {
+                    window.location.reload();
+                    document.getElementById("bg").style.display = 'none';
+                }
+            });
+        }
+
+        /**
+         * 修改操作
+         */
+        function editPermission(permissionId,permissionName,permissionUrl,permissionIcon){
+            $("#permissionId").val(permissionId);
+            $("#permissionName").val(permissionName);
+            $("#permissionUrl").val(permissionUrl);
+            $("#permissionIcon").val(permissionIcon);
+            document.getElementById("modify").style.display = 'block';
+        }
+        function modifyPermission(){
+            //从输入框拿到输入的值，用ajax发送请求
+            var permissionId=document.getElementById("permissionId").value;
+            var permissionName=document.getElementById("permissionName").value;
+            var permissionUrl=document.getElementById("permissionUrl").value;
+            var permissionIcon=document.getElementById("permissionIcon").value;
+
+            $.ajax({
+                type: "POST",
+                url: "modifyPermission.do",
+                data:{"id":permissionId,"name":permissionName,"newUrl":permissionUrl,"newIcon":permissionIcon},
+                dataType: "json",
+                success: function (response) {
+                    window.location.reload();
+                    alert("修改成功！")
+                    document.getElementById("modify").style.display = 'none';
                 }
             });
         }
@@ -82,23 +192,27 @@
         success: function (data) {
           console.log('服务器返回的数据：',data)
           $.each(data,function (index,menu){
-            var $tr=$("<tr>" +
-                    "<td><input type='checkbox'></td>" +
+              var permissionId=menu.id;
+              var permissionName=menu.name;
+              var permissionUrl=menu.url;
+              var permissionIcon=menu.icon;
+              //var permissionId=JSON.stringify(menu.id);
+
+
+              var $tr=$("<tr>" +
+                    "<td><input type='checkbox' name='checkbox' value='"+menu.id+"'></td>" +
                     "<td>"+menu.name+"</td>" +
                     "<td>"+menu.url+"</td>" +
                     "<td>"+menu.icon+"</td>" +
-                    "<td><a href='#'>修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='#'>删除</a></td>" +
+                    "<td><input type='button' value='修改' onclick='editPermission(\""+permissionId+"\",\""+permissionName+"\",\""+permissionUrl+"\",\""+permissionIcon+"\")'>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                  "<input type='button' value='删除' id='delete' onclick='deletePermission(\""+permissionId+"\")'></td>" +
                     "</tr>");
             $("#tb").append($tr);
           })
-
-            /*$(".butt2").click(function (){//新增点击事件
-                $("#bg").css("display","block");
-            })*/
         }
       });
     </script>
-    <input type="text" id="seekname"><button class="butt1" onclick="showLoading();seekPermission()" >查询</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="butt2" onclick="showdiv()">新增</button>
+    <input type="text" id="seekname"><button class="butt1" onclick="showLoading();seekPermission()" >查询</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="butt2" onclick="showdiv()">新增</button>
     <table id="tb">
         <caption>权限数据</caption><!--标题-->
         <tr>
@@ -114,14 +228,27 @@
     </div>
     <div id="bg">
         <div class="newUser">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
-            <input type="text" name="" id="">
-            <button>保存</button>
+            权限id：<input type="text" name="permission_id" id="permission_id"><br>
+            菜单名称：
+            <input type="text" name="permission_name" id="permission_name"><br>
+            菜单地址：<input type="text" name="permission_url" id="permission_url"><br>
+            菜单图标：<input type="text" name="permission_icon" id="permission_icon"><br>
+<!--            <input type="text" name="" id="">-->
+            <button onclick="insertPermission()">保存</button>
             <button>取消</button>
             <input id="btnclose" type="button" value="关闭" onclick="hidediv()"/>
+        </div>
+    </div>
+    <div id="modify">
+        <div class="newPermission">
+            权限id：<input type="text" name="permission_id" id="permissionId"><br>
+            菜单名称：<input type="text" name="permission_name" id="permissionName"><br>
+            菜单地址：<input type="text" name="permission_url" id="permissionUrl"><br>
+            菜单图标：<input type="text" name="permission_icon" id="permissionIcon"><br>
+            <!--            <input type="text" name="" id="">-->
+            <button onclick="modifyPermission()">保存</button>
+            <button onclick="document.getElementById('modify').style.display = 'none'">取消</button>
+            <input id="" type="button" value="关闭" onclick="document.getElementById('modify').style.display='none'"/>
         </div>
     </div>
 </body>
