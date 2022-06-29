@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="77272ff9-72ae-472a-8b39-1585fecd1d9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/nwesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/nwesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/permission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +25,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/桌面" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -86,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp\js" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\java\cn\edu\guet\bean" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\java\cn\edu\guet\images" />
@@ -239,7 +241,11 @@
       <workItem from="1656139862344" duration="2734000" />
       <workItem from="1656159824625" duration="54000" />
       <workItem from="1656297110758" duration="17302000" />
-      <workItem from="1656380953727" duration="21049000" />
+      <workItem from="1656380953727" duration="21727000" />
+      <workItem from="1656415107830" duration="800000" />
+      <workItem from="1656417211077" duration="40000" />
+      <workItem from="1656467498966" duration="5353000" />
+      <workItem from="1656475613485" duration="10365000" />
     </task>
     <task id="LOCAL-00001" summary="完成了权限列表">
       <created>1656039383841</created>
@@ -262,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656413098261</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完成了增删查改">
+      <created>1656413831331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656413831331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

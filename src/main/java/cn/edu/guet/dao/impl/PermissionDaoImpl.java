@@ -85,7 +85,6 @@ public class PermissionDaoImpl implements IPermissionDao {
                 permission.setIsParent(rs.getString("isParent"));
 
                 permissionList.add(permission);//把芒果放入麻袋
-                System.out.println(permissionList);
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

@@ -72,9 +72,8 @@
         function hidediv() {
             document.getElementById("bg").style.display = 'none';
         }
-        function hidediv() {
-            document.getElementById("bg").style.display = 'none';
-        }
+
+
 
 
         /*
@@ -99,8 +98,8 @@
                             "<td>"+menu.name+"</td>" +
                             "<td>"+menu.url+"</td>" +
                             "<td>"+menu.icon+"</td>" +
-                            "<td><input type='button' value='修改' onclick='editPermission()'>&nbsp;&nbsp;&nbsp;&nbsp;" +
-                            "<input type='button' value='删除' id='delete' onclick='deletePermission()'></td>" +
+                            "<td><input type='button' value='修改' onclick='editPermission(\""+menu.id+"\",\""+menu.name+"\",\""+menu.url+"\",\""+menu.icon+"\")'>&nbsp;&nbsp;&nbsp;&nbsp;" +
+                            "<input type='button' value='删除' id='delete' onclick='deletePermission(\""+menu.id+"\")'></td>" +
                             "</tr>");
                         $("#tb").append($tr);
                     })
