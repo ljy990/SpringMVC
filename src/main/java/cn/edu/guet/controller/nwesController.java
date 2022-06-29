@@ -1,7 +1,10 @@
 package cn.edu.guet.controller;
 
+import cn.edu.guet.bean.News;
 import cn.edu.guet.mvc.annotation.Controller;
 import cn.edu.guet.mvc.annotation.RequestMapping;
+import cn.edu.guet.service.INewsService;
+import cn.edu.guet.service.impl.NewsServiceImpl;
 import cn.edu.guet.util.WangEditor;
 import com.google.gson.Gson;
 import org.apache.commons.fileupload.FileItem;
@@ -77,6 +80,7 @@ public class nwesController {
                 System.out.print("the enctype must be multipart/form-data");
             }
     }
+
     @RequestMapping("/news")
     public void news(HttpServletRequest request){
         try {
@@ -87,5 +91,11 @@ public class nwesController {
         String newsContent = request.getParameter("mytxtIntro");
         System.out.println("富文本内容：" + newsContent);
         //把newsCotent存到数据库，JDBC
+
+    }
+    @RequestMapping("/articleList")
+    public List<News> getNews(){
+        INewsService newsService=new NewsServiceImpl();
+        return newsService.getNews();
     }
 }

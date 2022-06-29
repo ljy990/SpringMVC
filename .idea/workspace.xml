@@ -9,15 +9,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77272ff9-72ae-472a-8b39-1585fecd1d9b" name="Default Changelist" comment="完成了权限列表">
+    <list default="true" id="77272ff9-72ae-472a-8b39-1585fecd1d9b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/IPermissionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/IPermissionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/nwesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/controller/nwesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/PermissionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/IPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/IPermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/guet/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/permission.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/permission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +25,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Jsp File" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,6 +39,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -75,21 +78,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/桌面" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp\js" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\java\cn\edu\guet\bean" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\金玉\IdeaProjects\SpringMVC\src\main\java\cn\edu\guet\images" />
@@ -235,6 +238,14 @@
       <workItem from="1655952537713" duration="13556000" />
       <workItem from="1656037936038" duration="17319000" />
       <workItem from="1656071552843" duration="645000" />
+      <workItem from="1656139862344" duration="2734000" />
+      <workItem from="1656159824625" duration="54000" />
+      <workItem from="1656297110758" duration="17302000" />
+      <workItem from="1656380953727" duration="21727000" />
+      <workItem from="1656415107830" duration="800000" />
+      <workItem from="1656417211077" duration="40000" />
+      <workItem from="1656467498966" duration="5353000" />
+      <workItem from="1656475613485" duration="10365000" />
     </task>
     <task id="LOCAL-00001" summary="完成了权限列表">
       <created>1656039383841</created>
@@ -243,7 +254,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656039383841</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成了部分查询操作，可以拿到查询的数据，但没显示在td">
+      <created>1656139947686</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656139947686</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完成了增删查改">
+      <created>1656413098261</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656413098261</updated>
+    </task>
+    <task id="LOCAL-00004" summary="完成了增删查改">
+      <created>1656413831331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656413831331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +283,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成了权限列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了权限列表" />
+    <MESSAGE value="完成了部分查询操作，可以拿到查询的数据，但没显示在td" />
+    <MESSAGE value="完成了增删查改" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了增删查改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

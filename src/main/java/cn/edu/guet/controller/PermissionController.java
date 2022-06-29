@@ -28,8 +28,20 @@ public class PermissionController {
 
     @RequestMapping("/deletePermission")
     public int deletePermission(String id){
+        IPermissionService permissionService=new PermissionServiceImpl();
+        return permissionService.deletePermission(id);
+    }
 
-        return 0;
+    @RequestMapping("/insertPermission")
+    public List<Permission> deletePermission(String id, String name, String newurl, String icon){
+        IPermissionService permissionService=new PermissionServiceImpl();
+        return permissionService.insertPermission(id, name, newurl, icon);
+    }
+
+    @RequestMapping("/modifyPermission")
+    public List<Permission> modifyPermission(String id, String name, String newUrl, String newIcon){
+        IPermissionService permissionService=new PermissionServiceImpl();
+        return permissionService.modifyPermission(id, name, newUrl, newIcon);
     }
 }
 

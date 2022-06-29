@@ -12,5 +12,7 @@ public interface IPermissionService {
     List<Permission> getPermission();
     List<Permission> seekPermission(String seekName);
     int deletePermission(String id);
+    List<Permission> insertPermission(String id,String name,String newurl,String icon);
+    List<Permission> modifyPermission(String id, String name, String newUrl, String newIcon);
 
 }

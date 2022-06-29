@@ -20,14 +20,27 @@ public class PermissionServiceImpl implements IPermissionService {
     }
 
     @Override
-    public List<Permission> seekPermission(String name){
+    public List<Permission> seekPermission(String seekName){
         IPermissionDao permissionDao=new PermissionDaoImpl();
-        return permissionDao.seekPermission(name);
+        return permissionDao.seekPermission(seekName);
     }
 
     @Override
     public int deletePermission(String id) {
-        return 0;
+        IPermissionDao permissionDao=new PermissionDaoImpl();
+        return permissionDao.deletePermission(id);
+    }
+
+    @Override
+    public List<Permission> insertPermission(String id, String name, String newurl, String icon) {
+        IPermissionDao permissionDao=new PermissionDaoImpl();
+        return permissionDao.insertPermission(id, name, newurl, icon);
+    }
+
+    @Override
+    public List<Permission> modifyPermission(String id, String name, String newUrl, String newIcon) {
+        IPermissionDao permissionDao=new PermissionDaoImpl();
+        return permissionDao.modifyPermission(id, name, newUrl, newIcon);
     }
 
 }
